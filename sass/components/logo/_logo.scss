@@ -1,0 +1,41 @@
+.logo {
+  color: $accent-color;
+
+  font-family: $logo-font;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.166;
+
+  &__text {
+    color: $black-color;
+  }
+
+  &__text_inverse {
+    color: $white-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    color: $accent-color;
+
+    font-family: $logo-font;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+
+    &__text {
+      color: $black-color;
+    }
+
+    &__text_inverse {
+      color: $white-color;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header .logo {
+    margin-right: 85px;
+  }
+}

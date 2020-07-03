@@ -1,0 +1,204 @@
+.backdrop {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden .modal {
+  transform: scale(0, 0);
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  width: 528px;
+  padding: 40px;
+  background-color: $white-color;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: $white-color;
+}
+
+.close__icon {
+  fill: #000000;
+}
+
+.close:hover .close__icon,
+.close:focus .close__icon {
+  fill: $accent-color;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__title {
+  margin-bottom: 30px;
+
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: $title-text-color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-wrap,
+.comment-wrap {
+  position: relative;
+}
+
+.input-wrap {
+  margin-bottom: 28px;
+}
+.label {
+  display: block;
+}
+
+.label__icon {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+  fill: $title-text-color;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label__text {
+  position: absolute;
+  top: 12px;
+  left: 42px;
+  transition: top 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    left 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input {
+  height: 40px;
+  width: 100%;
+  padding: 12px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.input:hover,
+.input:focus,
+.comment:hover,
+.comment:focus {
+  border: 1px solid $accent-color;
+  outline-color: $accent-color;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label:focus-within,
+.input:hover ~ .label__icon,
+.input:hover ~ .label__text,
+.comment:hover + .label__text,
+.comment:focus + .label__text {
+  color: $accent-color;
+  fill: $accent-color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:hover ~ .label__text,
+.input:focus ~ .label__text,
+.input:not(:placeholder-shown) ~ .label__text {
+  top: -18px;
+  left: 16px;
+  transition: top 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    left 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comment-wrap {
+  margin-bottom: 20px;
+}
+
+.comment {
+  height: 120px;
+  width: 100%;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.comment + .label__text {
+  top: 12px;
+  left: 16px;
+}
+
+.comment:hover + .label__text,
+.comment:focus + .label__text,
+.comment:not(:placeholder-shown) + .label__text {
+  top: -18px;
+  transition: top 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-link {
+  color: $accent-color;
+  text-decoration: underline;
+}
+
+.label-checkbox {
+  display: inline-block;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+}
+
+.label-checkbox::before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: text-top;
+  width: 16px;
+  height: 15px;
+
+  background-image: url(../images/svg-icons/off.svg),
+    url(../images/svg-icons/on.svg);
+  background-size: contain, 0;
+  background-origin: content-box;
+}
+
+.checkbox:focus + .label-checkbox::before {
+  outline: 2px solid $accent-color;
+}
+
+.checkbox:checked + .label-checkbox::before,
+.checkbox:checked:focus + .label-checkbox::before {
+  background-size: 0, contain;
+  outline: 0;
+}
+
+.submit-btn {
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+}
