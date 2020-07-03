@@ -15,6 +15,11 @@
     background-color: $secondary-bg-color;
   }
 }
+
+.section_secondary .cards__item {
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   .section {
     padding-top: 94px;
@@ -32,6 +37,9 @@
     &_secondary {
       background-color: $secondary-bg-color;
     }
+  }
+  .section_secondary .cards__item {
+    width: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -51,5 +59,8 @@
     &_secondary {
       background-color: $secondary-bg-color;
     }
+  }
+  .section_secondary .cards__item {
+    width: 25%;
   }
 }

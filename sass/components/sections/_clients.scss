@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
 
-  width: 170px;
+  width: 210px;
   height: 90px;
 
   border: 1px solid $border-icon-color;
@@ -21,4 +21,28 @@
 
 .clients-logo {
   fill: currentColor;
+}
+
+.clients .cards__item {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .clients-link {
+    width: 226px;
+  }
+  .clients .cards__item {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .clients-link {
+    width: 170px;
+    height: 90px;
+  }
+  .clients .cards__item {
+    width: calc(100% / 6);
+  }
 }

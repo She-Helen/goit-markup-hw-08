@@ -148,7 +148,7 @@ main {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #e598e740;
+    background-color: #7397e440;
   }
 }
 
@@ -328,6 +328,10 @@ main {
   background-color: #f5f4fa;
 }
 
+.section_secondary .cards__item {
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   .section {
     padding-top: 94px;
@@ -342,6 +346,9 @@ main {
   }
   .section_secondary {
     background-color: #f5f4fa;
+  }
+  .section_secondary .cards__item {
+    width: 50%;
   }
 }
 
@@ -359,6 +366,9 @@ main {
   }
   .section_secondary {
     background-color: #f5f4fa;
+  }
+  .section_secondary .cards__item {
+    width: 25%;
   }
 }
 
@@ -471,8 +481,9 @@ main {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-.member__img {
+.member__img, .member__img-mob, .member__img-tab {
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .member__name, .member__pos {
@@ -487,6 +498,32 @@ main {
 
 .member__pos {
   margin-bottom: 16px;
+}
+
+.member__img, .member__img-tab {
+  display: none;
+}
+
+.member__img-mob {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .member__img-tab {
+    display: block;
+  }
+  .member__img-mob {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .member__img {
+    display: block;
+  }
+  .member__img-tab {
+    display: none;
+  }
 }
 
 .socials {
@@ -531,7 +568,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 170px;
+  width: 210px;
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
@@ -546,6 +583,30 @@ main {
 
 .clients-logo {
   fill: currentColor;
+}
+
+.clients .cards__item {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .clients-link {
+    width: 226px;
+  }
+  .clients .cards__item {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .clients-link {
+    width: 170px;
+    height: 90px;
+  }
+  .clients .cards__item {
+    width: calc(100% / 6);
+  }
 }
 
 .footer {
