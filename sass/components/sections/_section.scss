@@ -1,6 +1,6 @@
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   &__title {
     margin-bottom: 50px;
@@ -13,5 +13,43 @@
 
   &_secondary {
     background-color: $secondary-bg-color;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+
+    &__title {
+      margin-bottom: 50px;
+
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.17;
+      text-align: center;
+    }
+
+    &_secondary {
+      background-color: $secondary-bg-color;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+
+    &__title {
+      margin-bottom: 50px;
+
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.17;
+      text-align: center;
+    }
+
+    &_secondary {
+      background-color: $secondary-bg-color;
+    }
   }
 }

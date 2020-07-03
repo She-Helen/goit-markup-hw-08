@@ -1,33 +1,29 @@
 .pack {
-  padding-bottom: 0;
-
-  &-list__item {
-    width: 25%;
-  }
+  font-size: 14px;
 
   &-list__title {
     margin-bottom: 10px;
 
     font-weight: 700;
-    font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
   }
 
   &-list__text {
-    font-size: 14px;
     line-height: 1.71;
   }
 }
 .pack-list__item {
+  width: 100%;
   &::before {
     display: block;
     content: '';
+    width: 100%;
     height: 120px;
     border-radius: 4px;
     margin-bottom: 30px;
 
-    background-color: var(--secondary-bg-color);
+    background-color: $secondary-bg-color;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -44,5 +40,21 @@
   }
   &:nth-child(4)::before {
     background-image: url(../images/svg-icons/astronaut.svg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pack-list__item {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pack {
+    padding-bottom: 0;
+  }
+
+  .pack-list__item {
+    width: 25%;
   }
 }
