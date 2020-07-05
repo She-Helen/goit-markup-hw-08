@@ -22,49 +22,63 @@
           Web
           <span class="logo__text">Studio</span>
         </a>
-        <nav class="nav">
-          <ul class="list nav-list">
-            <li class="nav-list__item">
-              <a href="./index.html" class="link nav__link nav__link_current">
-                Студия
+        <button type="button" class="menu-btn is-open" aria-controls="menu">
+          <svg class="burger" width="40" height="40">
+            <use
+              class="icon-menu"
+              href="./images/symbol-defs.svg#icon-menu"
+            ></use>
+            <use
+              class="icon-cross"
+              href="./images/symbol-defs.svg#icon-cross"
+            ></use>
+          </svg>
+        </button>
+        <div class="menu" id="menu">
+          <nav class="nav">
+            <ul class="list nav-list">
+              <li class="nav-list__item">
+                <a href="./index.html" class="link nav__link nav__link_current">
+                  Студия
+                </a>
+              </li>
+              <li class="nav-list__item">
+                <a href="./portfolio.html" class="link nav__link">
+                  Портфолио
+                </a>
+              </li>
+              <li class="nav-list__item">
+                <a href="#" class="link nav__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="list contacts">
+            <li class="contacts__item">
+              <a
+                href="mailto:info@devstudio.com"
+                class="link contacts__link"
+                aria-label="Написать на электорнную почту info@devstudio.com"
+              >
+                <svg class="contacts-icon" width="16" height="11.2">
+                  <use href="./images/symbol-defs.svg#envelope"></use>
+                </svg>
+                <span class="mail">info@devstudio.com</span>
               </a>
             </li>
-            <li class="nav-list__item">
-              <a href="./portfolio.html" class="link nav__link">
-                Портфолио
+            <li class="contacts__item">
+              <a
+                href="tel:+380961111111"
+                class="link contacts__link"
+                aria-label="Позвонить по номеру +380961111111"
+              >
+                <svg class="contacts-icon" width="10" height="14.94">
+                  <use href="./images/symbol-defs.svg#smartphone"></use>
+                </svg>
+                <span class="tel">+38 096 111 11 11</span>
               </a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#" class="link nav__link">Контакты</a>
             </li>
           </ul>
-        </nav>
-        <ul class="list contacts">
-          <li class="contacts__item">
-            <a
-              href="mailto:info@devstudio.com"
-              class="link contacts__link"
-              aria-label="Написать на электорнную почту info@devstudio.com"
-            >
-              <svg class="contacts-icon" width="16" height="11.2">
-                <use href="./images/symbol-defs.svg#envelope"></use>
-              </svg>
-              <span class="mail">info@devstudio.com</span>
-            </a>
-          </li>
-          <li class="contacts__item">
-            <a
-              href="tel:+380961111111"
-              class="link contacts__link"
-              aria-label="Позвонить по номеру +380961111111"
-            >
-              <svg class="contacts-icon" width="10" height="14.94">
-                <use href="./images/symbol-defs.svg#smartphone"></use>
-              </svg>
-              <span class="tel">+38 096 111 11 11</span>
-            </a>
-          </li>
-        </ul>
+        </div>
       </div>
     </header>
     <main class="main">
@@ -634,7 +648,7 @@
     <div data-modal class="backdrop is-hidden">
       <div class="modal">
         <button data-modal-close type="button" class="close">
-          <svg class="close__icon" width="14" height="14">
+          <svg class="close__icon" width="11" height="11">
             <use href="./images/symbol-defs.svg#close"></use>
           </svg>
         </button>
