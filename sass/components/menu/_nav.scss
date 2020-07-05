@@ -1,9 +1,16 @@
-.nav,
+.nav {
+  display: flex;
+  margin-bottom: 55px;
+}
+
 .nav-list {
   display: flex;
   align-items: center;
-}
+  margin-left: auto;
+  margin-right: auto;
+ 
 
+}
 .nav-list__item {
   position: relative;
 }
@@ -11,50 +18,57 @@
 .nav__link {
   display: flex;
   align-items: center;
-  @extend %header-link;
-  color: $title-text-color;
+  font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   color: $title-text-color;
 
   &:hover,
   &:focus {
     color: $accent-color;
   }
-
-  // &_current::after {
-  //   content: '';
-  //   position: absolute;
-  //   bottom: -27px;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 0;
-  //   border: 2px solid $accent-color;
-  //   border-radius: 2px;
-  // }
 }
+
 
 .nav__link_current {
-  color: $accent-color;
+ color: $accent-color;
 }
 
+.nav__link_current::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border: 2px solid $accent-color;
+  border-radius: 2px;
+}
+
+// Только для мобильных устройств до ширины планшета
 @media screen and (max-width: 767px) {
+  
   .nav-list {
     flex-direction: column;
   }
-  .nav__link_current::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 0;
-    border: 2px solid $accent-color;
-    border-radius: 2px;
-  }
-
+  
   .nav-list__item:not(:last-child) {
     margin-bottom: 40px;
   }
 }
 
-// .nav-list__item:not(:last-child) {
-//     margin-right: 50px;
-//   }
+//Для планшетов и ПК
+@media screen and (min-width: 768px) {
+  .nav {
+    margin-bottom: 0;
+  }
+  
+  .nav-list__item:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  .nav__link_current::after {
+    bottom: -33px;
+  }
+}
