@@ -491,11 +491,11 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: -15px -15px;
+  margin: -15px;
 }
 
 .cards__item {
-  padding: 15px;
+  margin: 15px;
 }
 
 .pack {
@@ -1127,13 +1127,13 @@ main {
 
 @media screen and (min-width: 768px) {
   .project {
-    width: calc((100% - 30px) / 2);
+    width: calc((100% - 15px*4) / 2);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .project {
-    width: calc((100% - 30px*2) / 3);
+    width: calc((100% - 15px*6) / 3);
   }
 }
 
@@ -1161,6 +1161,7 @@ main {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
 .project__category {
