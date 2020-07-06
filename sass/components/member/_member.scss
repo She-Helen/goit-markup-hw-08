@@ -7,9 +7,8 @@
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
 
-  &__img,
-  &__img-mob,
-  &__img-tab {
+  &__img
+  {
     margin-bottom: 30px;
     width: 100%;
   }
@@ -28,31 +27,7 @@
   &__pos {
     margin-bottom: 16px;
   }
-
-  &__img,
-  &__img-tab {
-    display: none;
-  }
-
-  &__img-mob {
-    display: block;
-  }
+  
 }
 
-@media screen and (min-width: 768px) {
-  .member__img-tab {
-    display: block;
-  }
-  .member__img-mob {
-    display: none;
-  }
-}
 
-@media screen and (min-width: 1200px) {
-  .member__img {
-    display: block;
-  }
-  .member__img-tab {
-    display: none;
-  }
-}

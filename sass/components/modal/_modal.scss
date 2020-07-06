@@ -18,13 +18,22 @@
 .modal {
   position: relative;
   margin: auto;
-  width: 528px;
+  width: 450px;
   padding: 40px;
   background-color: $white-color;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  @media screen and (max-width: 449px) {
+    padding: 30px;
+  }
+
+  @media screen and (min-width: 1199px) {
+    width: 528px;
+  }
+
 }
 
 .close {
@@ -158,12 +167,22 @@
 .policy-link {
   color: $accent-color;
   text-decoration: underline;
+
+  @media screen and (max-width: 449px) {
+    display: block;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
 }
 
 .label-checkbox {
   display: inline-block;
   margin-bottom: 30px;
   cursor: pointer;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+  }
 }
 
 .checkbox {
