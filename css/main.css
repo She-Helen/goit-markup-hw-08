@@ -234,6 +234,7 @@ main {
     width: 100%;
     padding-top: 60px;
     padding-bottom: 60px;
+    z-index: 1;
     background-color: #ffffff;
     border-top: 1px solid #ececec;
   }
@@ -277,6 +278,12 @@ main {
   margin-bottom: 55px;
 }
 
+@media screen and (min-width: 768px) {
+  .nav {
+    margin-bottom: 0;
+  }
+}
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -284,8 +291,26 @@ main {
   margin-right: auto;
 }
 
+@media screen and (max-width: 767px) {
+  .nav-list {
+    flex-direction: column;
+  }
+}
+
 .nav-list__item {
   position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-list__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-list__item:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
 .nav__link {
@@ -317,24 +342,15 @@ main {
   border-radius: 2px;
 }
 
-@media screen and (max-width: 767px) {
-  .nav-list {
-    flex-direction: column;
-  }
-  .nav-list__item:not(:last-child) {
-    margin-bottom: 40px;
+@media screen and (min-width: 768px) {
+  .nav__link_current::after {
+    bottom: -34px;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .nav {
-    margin-bottom: 0;
-  }
-  .nav-list__item:not(:last-child) {
-    margin-right: 50px;
-  }
+@media screen and (min-width: 1200px) {
   .nav__link_current::after {
-    bottom: -33px;
+    bottom: -32px;
   }
 }
 
@@ -356,26 +372,6 @@ main {
   }
 }
 
-.hero-block {
-  margin: auto;
-}
-
-.hero__title {
-  margin-bottom: 30px;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 1.62;
-  text-align: center;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.hero__button {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media screen and (min-width: 768px) {
   .hero {
     background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-bg/hero-tablet.jpg);
@@ -391,7 +387,7 @@ main {
 @media screen and (min-width: 1200px) {
   .hero {
     background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/hero-bg/hero-desk.jpg);
-    max-width: 1920px;
+    max-width: 1600px;
     padding-top: 200px;
     padding-bottom: 200px;
   }
@@ -408,6 +404,33 @@ main {
     font-size: 44px;
     line-height: 1.36;
   }
+}
+
+.hero-block {
+  margin: auto;
+}
+
+.hero__title {
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+
+.hero__button {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button {
@@ -865,9 +888,8 @@ main {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: scroll;
-  overflow: hidden;
 }
 
 .is-hidden .modal {

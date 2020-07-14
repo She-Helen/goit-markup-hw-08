@@ -1,6 +1,10 @@
 .nav {
   display: flex;
   margin-bottom: 55px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .nav-list {
@@ -8,11 +12,23 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
- 
 
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 }
+
 .nav-list__item {
   position: relative;
+}
+
+.nav-list__item:not(:last-child) {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 50px;
+  }
 }
 
 .nav__link {
@@ -30,7 +46,6 @@
   }
 }
 
-
 .nav__link_current {
  color: $accent-color;
 }
@@ -44,31 +59,11 @@
   height: 0;
   border: 2px solid $accent-color;
   border-radius: 2px;
-}
 
-// Только для мобильных устройств до ширины планшета
-@media screen and (max-width: 767px) {
-  
-  .nav-list {
-    flex-direction: column;
+  @media screen and (min-width: 768px) {
+    bottom: -34px;
   }
-  
-  .nav-list__item:not(:last-child) {
-    margin-bottom: 40px;
-  }
-}
-
-//Для планшетов и ПК
-@media screen and (min-width: 768px) {
-  .nav {
-    margin-bottom: 0;
-  }
-  
-  .nav-list__item:not(:last-child) {
-    margin-right: 50px;
-  }
-
-  .nav__link_current::after {
-    bottom: -33px;
+  @media screen and (min-width: 1200px) {
+    bottom: -32px;
   }
 }
